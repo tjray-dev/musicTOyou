@@ -4,13 +4,13 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import { useFormFields } from "../libs/hooksLib";
-import {useAppContext} from '../libs/contextLib'
+// import {useAppContext} from '../libs/contextLib'
 import "./Login.css";
 
 export default function Login() {
   const history = useHistory();
 
-  const {userHasAuthenticated} = useAppContext();
+  // const {userHasAuthenticated} = useAppContext();
 
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
@@ -25,7 +25,7 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    userHasAuthenticated(true);
+    // userHasAuthenticated(true);
     history.push('/')
   }
 

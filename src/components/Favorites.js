@@ -1,4 +1,8 @@
-// Will render a saved list of favorites based on the logged in user
+
+// !TO DO! 
+  // build out favorites page and any child components needed
+    // will need multiple states for the different kinds of lists
+    // i.e. 
 function Favorites(){
   return(
     <h1>Hello World!</h1>

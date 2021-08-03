@@ -1,5 +1,5 @@
 // This is where any react Hooks can be imported
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 // These are the Base components
 import Header from './Header'
 import Favorites from './Favorites'
@@ -11,23 +11,29 @@ import {AppContext} from '../libs/contextLib'
 import '../App.css';
 
 function App() {
-
-  const [isAuthenticated, userHasAuthenticated] = useState(false)
-  const authKey = '&key=DRbPFOFZKsmVvvnOrLoC'
-  const authSecret = '&secret=pdjKcOwjNpdnhiVcmuChnntCMjVmbvwH'
-  fetch(`https://api.discogs.com/database/search?release_title=nevermind&artist=nirvana&per_page=3&page=1${authKey}${authSecret}`)
-    .then(r => r.json())
-      .then(console.log)
+  const [ searchResults, setSearchResults ] = useState([])
+  const [ currentPage,   setCurrentPage ]   = useState(1)
+  const [ itemsPerPage,  setItemsPerPage ]  = useState(20)
 
   return (
     <div className="App">
-    <AppContext.Provider value={{isAuthenticated, userHasAuthenticated}}>
-      <Header />
+      <AppContext.Provider>
+      <Header 
+        onSearch={ setSearchResults } 
+        currentPage={ currentPage } 
+        itemsPerPage={ itemsPerPage } 
+      />
       <Favorites />
       <Login />
       <LogOut />
-      <MainContainer />
+      
       </AppContext.Provider>
+      <MainContainer 
+        searchResults={ searchResults }
+        currentPage={ currentPage } 
+        setCurrentPage={ setCurrentPage } 
+        itemsPerPage={ setItemsPerPage } 
+      />
     </div>
   );
 }
