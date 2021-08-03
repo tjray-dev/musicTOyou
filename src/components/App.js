@@ -11,19 +11,9 @@ import '../App.css';
 function App() {
   const [searchResults, setSearchResults ] = useState([])
 
-  useEffect(() => {
-    const authKey    = '&key=DRbPFOFZKsmVvvnOrLoC'
-    const authSecret = '&secret=pdjKcOwjNpdnhiVcmuChnntCMjVmbvwH'
-    const baseURL    = 'https://api.discogs.com/database/search?'
-  
-    fetch(`${baseURL}artist=tool${authKey}${authSecret}`)
-      .then(r => r.json())
-        .then(data => setSearchResults(data.results) )
-  }, [])
-  console.log(searchResults)
   return (
     <div className="App">
-      <Header />
+      <Header onSearch={ setSearchResults } />
       <Favorites />
       <LogOut />
       <MainContainer searchResults={ searchResults } />

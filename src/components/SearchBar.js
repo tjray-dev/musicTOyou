@@ -1,5 +1,15 @@
-// checkboxes will set a state that is passed up and interpolated into the fetch
-function SearchBar(){
+import { useState, useEffect } from 'react'
+function SearchBar( { onSearch } ){
+
+  useEffect(() => {
+    const authKey    = '&key=DRbPFOFZKsmVvvnOrLoC'
+    const authSecret = '&secret=pdjKcOwjNpdnhiVcmuChnntCMjVmbvwH'
+    const baseURL    = 'https://api.discogs.com/database/search?'
+  
+    fetch(`${baseURL}artist=tool${authKey}${authSecret}`)
+      .then(r => r.json())
+        .then(data => onSearch(data.results) )
+  }, [])
   return(
     <form>
       <input type='checkbox' className='searchType' id='artist' />
