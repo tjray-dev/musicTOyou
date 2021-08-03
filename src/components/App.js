@@ -1,5 +1,5 @@
 // This is where any react Hooks can be imported
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 // These are the Base components
 import Header from './Header'
 import Favorites from './Favorites'
@@ -9,14 +9,26 @@ import MainContainer from './MainContainer'
 import '../App.css';
 
 function App() {
-  const [searchResults, setSearchResults ] = useState([])
+  const [ searchResults, setSearchResults ] = useState([])
+  const [ currentPage, setCurrentPage ] = useState(1)
+  const [ itemsPerPage, setItemsPerPage ] = useState(20)
 
+  console.log(searchResults)
   return (
     <div className="App">
-      <Header onSearch={ setSearchResults } />
+      <Header 
+        onSearch={ setSearchResults } 
+        currentPage={ currentPage } 
+        itemsPerPage={ itemsPerPage } 
+      />
       <Favorites />
       <LogOut />
-      <MainContainer searchResults={ searchResults } />
+      <MainContainer 
+        searchResults={ searchResults }
+        currentPage={ currentPage } 
+        setCurrentPage={ setCurrentPage } 
+        itemsPerPage={ setItemsPerPage } 
+      />
     </div>
   );
 }
