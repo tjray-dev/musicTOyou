@@ -1,14 +1,15 @@
-import Login from './Login'
+// import Login from './Login'
 import SearchBar from './SearchBar'
 import SignUp from './SignUp'
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
 // parent component that will hold everything displayed across 'pages'
 function Header(){
   return(
     <>
-      <h1>Hello World!</h1>
-      <Login />
-      <SearchBar />
-      <SignUp />
+      <Nav>
+        <SearchBar />
+        <SignUp />
+      </Nav>
     </>
   )
 }

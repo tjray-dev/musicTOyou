@@ -1,7 +1,20 @@
 // This will be a default page for non-users/onLoad
+import Button from "react-bootstrap/Button";
+import {useState} from 'react'
+import {useHistory} from 'react-router-dom'
+
 function LogOut(){
+
+  const history = useHistory()
+
+ function handleLogOut(){
+   localStorage.clear();
+   history.push('/SignUp')
+ }
+
+  
   return(
-    <h1>Hello World!</h1>
+    <Button onClick={handleLogOut}>LogOut</Button>
   )
 }
 export default LogOut
