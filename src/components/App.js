@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Header from './Header'
 import Favorites from './Favorites'
 import LogOut from './LogOut'
-import Login from './Login'
+// import Login from './Login'
 import MainContainer from './MainContainer'
 import {AppContext} from '../libs/contextLib'
 // This is where styles and other things can be imported
@@ -24,7 +24,7 @@ function App() {
         itemsPerPage={ itemsPerPage } 
       />
       <Favorites />
-      <Login />
+      {/* <Login /> */}
       <LogOut />
       
       </AppContext.Provider>
