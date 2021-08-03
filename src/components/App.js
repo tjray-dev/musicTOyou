@@ -10,10 +10,9 @@ import '../App.css';
 
 function App() {
   const [ searchResults, setSearchResults ] = useState([])
-  const [ currentPage, setCurrentPage ] = useState(1)
-  const [ itemsPerPage, setItemsPerPage ] = useState(20)
+  const [ currentPage,   setCurrentPage ]   = useState(1)
+  const [ itemsPerPage,  setItemsPerPage ]  = useState(20)
 
-  console.log(searchResults)
   return (
     <div className="App">
       <Header 
