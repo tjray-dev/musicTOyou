@@ -1,10 +1,14 @@
-// This will be a single input text field
-// Will have a single submit button
-// have dropdown to specify the kind of search 
-// i.e. Artist, Track, Album, etc.
+// checkboxes will set a state that is passed up and interpolated into the fetch
 function SearchBar(){
   return(
-    <h1>Hello World!</h1>
+    <form>
+      <input type='checkbox' className='searchType' id='artist' />
+        <label htmlFor='artist'>Artist</label>
+      <input type='checkbox' className='searchType' id='album'/>
+        <label htmlFor='album'>Album</label>
+      <input type='text' placeholder='This is a search bar...' />
+      <input type='button' value='Search' />
+    </form>
   )
 }
 export default SearchBar

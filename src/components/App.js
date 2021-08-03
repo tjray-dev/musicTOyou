@@ -9,18 +9,24 @@ import MainContainer from './MainContainer'
 import '../App.css';
 
 function App() {
-  const authKey = '&key=DRbPFOFZKsmVvvnOrLoC'
-  const authSecret = '&secret=pdjKcOwjNpdnhiVcmuChnntCMjVmbvwH'
-  fetch(`https://api.discogs.com/database/search?release_title=nevermind&artist=nirvana&per_page=3&page=1${authKey}${authSecret}`)
-    .then(r => r.json())
-      .then(console.log)
+  const [searchResults, setSearchResults ] = useState([])
 
+  useEffect(() => {
+    const authKey    = '&key=DRbPFOFZKsmVvvnOrLoC'
+    const authSecret = '&secret=pdjKcOwjNpdnhiVcmuChnntCMjVmbvwH'
+    const baseURL    = 'https://api.discogs.com/database/search?'
+  
+    fetch(`${baseURL}artist=tool${authKey}${authSecret}`)
+      .then(r => r.json())
+        .then(data => setSearchResults(data.results) )
+  }, [])
+  console.log(searchResults)
   return (
     <div className="App">
       <Header />
       <Favorites />
       <LogOut />
-      <MainContainer />
+      <MainContainer searchResults={ searchResults } />
     </div>
   );
 }

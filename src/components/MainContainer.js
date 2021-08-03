@@ -1,7 +1,11 @@
 // This component will render whatever will be the focus of the page at the time of rendering
-function MainContainer(){
+import Card from './Card'
+function MainContainer({ searchResults}){
+
   return(
-    <h1>Hello World!</h1>
+    <div>
+      {searchResults.map(result => <Card key={ result.catno } result={ result } />)}
+    </div>
   )
 }
 export default MainContainer
