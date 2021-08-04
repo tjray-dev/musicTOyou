@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, } from 'react'
 
 // !TO DO!
   // ** Start with one artist and work outward from there **

@@ -23,24 +23,27 @@ function SearchBar( { onSearch, currentPage, itemsPerPage } ){
         name='searchType' 
         onClick={ e => setSearchType(e.target.value) } 
       /> Artist 
+
       <input 
         type='radio' 
         value='title' 
         name='searchType' 
         onClick={ e => setSearchType(e.target.value) } 
-      /> Album 
+      />Album 
+
       <input 
         type='radio' 
         value='track' 
         name='searchType' 
         onClick={ e => setSearchType(e.target.value) } 
-      /> Track 
+      />Track 
+      
       <input 
         type='radio'
         value='genre'
         name='searchType'
         onClick={ e => setSearchType(e.target.value) } 
-      /> Genre 
+      />Genre 
       {/* This is the text field for the search functionality */}
       <input 
         type='text' 

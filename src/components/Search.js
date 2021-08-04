@@ -5,7 +5,7 @@ import SignUp from './SignUp'
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
 // parent component that will hold everything displayed across 'pages'
 // make ternary for login logout button functionality
-function Header( { onSearch, currentPage, itemsPerPage } ){
+function Search( { onSearch, currentPage, itemsPerPage } ){
   return(
     <header>
       {/* <Login /> */}
@@ -18,4 +18,4 @@ function Header( { onSearch, currentPage, itemsPerPage } ){
     </header>
   )
 }
-export default Header
+export default Search
