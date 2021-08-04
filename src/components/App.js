@@ -14,6 +14,11 @@ function App() {
   const [ searchResults, setSearchResults ] = useState([])
   const [ currentPage,   setCurrentPage ]   = useState(1)
   const [ itemsPerPage,  setItemsPerPage ]  = useState(20)
+  // State for the favorites page
+  // These will need to be passed down to the card 
+  // const [ favArtists, setFavArtists ]  = useState([])
+  // const [ favTracks,  setFavTracks  ]  = useState([])
+  // const [favAlbums,  setFaveAlbums ]  = useState([]) 
 
   return (
     <div className="App">

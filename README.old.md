@@ -7,17 +7,20 @@
       userName: 'string',
       userEmail: 'string',
       password: 'string',
-      playlists: [
-        {
-          playlistName: 'string',
-          songs: [
-            {
-              trackTitle: 'string',
-              otherTrackData: 'data type',
-              ...
-            }
-          ]
-        }
+      favoriteArtists: [
+        'artist id',
+        'artist id',
+        'artist id',
+        ...
+      ],
+      favoriteAlbums: [
+        'album id',
+        'album id',
+        'album id',
+        ...
+      ],
+      favoriteTracks: [
+        
       ]
     }
   ]
