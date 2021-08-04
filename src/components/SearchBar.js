@@ -48,7 +48,6 @@ function SearchBar( { onSearch, currentPage, itemsPerPage } ){
         value={ searchTerm }
         onChange={ (e) => setSearchTerm(e.target.value) }
       />
-      <input type='submit' value='Search' />
     </form>
   )
 }

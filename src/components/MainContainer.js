@@ -10,7 +10,7 @@ function MainContainer( { searchResults, setCurrentPage, currentPage } ){
    }
    function nextPage(){
      setCurrentPage( ++currentPage )
-     console.log(currentPage)
+     console.log(searchResults)
    }
   return(
     <div>
@@ -18,7 +18,6 @@ function MainContainer( { searchResults, setCurrentPage, currentPage } ){
       <button onClick={ previousPage }>Previous Page</button>
       <button onClick={ nextPage }>Next Page</button>
     </div>
-   
   )
 }
 export default MainContainer
