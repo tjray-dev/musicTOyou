@@ -41,8 +41,9 @@ function App() {
           <MainContainer 
             searchResults={ searchResults }
             currentPage={ currentPage }
+            itemsPerPage={ itemsPerPage }
+            onSearch={ setSearchResults }
             setCurrentPage={ setCurrentPage } 
-            itemsPerPage={ setItemsPerPage }
             setFavArtists={ setFavArtists }
             setFavTracks={ setFavTracks } 
             setFavAlbums={ setFavAlbums }  
@@ -56,11 +57,11 @@ function App() {
           />
         </Route>
         <Route path='/search'>
-          <SearchBar 
+          {/* <SearchBar 
             onSearch={ setSearchResults } 
             currentPage={ currentPage } 
             itemsPerPage={ itemsPerPage }  
-          />
+          /> */}
           {/* <Search 
             onSearch={ setSearchResults } 
             currentPage={ currentPage } 

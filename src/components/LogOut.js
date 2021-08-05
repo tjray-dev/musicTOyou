@@ -8,6 +8,7 @@ function LogOut(){
   const history = useHistory()
 
  function handleLogOut(){
+  //  do a patch request to the json server to persist the data 
    localStorage.clear();
    history.push('/SignUp')
  }
