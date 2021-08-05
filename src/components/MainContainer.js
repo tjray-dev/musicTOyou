@@ -1,5 +1,6 @@
 import Card from './Card'
 import SearchBar from './SearchBar'
+import Favorites from './Favorites'
 function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtists, setFavTracks, setFavAlbums, onSearch, itemsPerPage }){
 
   function mapHelper(result){

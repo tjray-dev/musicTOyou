@@ -62,10 +62,8 @@ function App() {
               onSearch={ setSearchResults }
               setCurrentPage={ setCurrentPage } 
               setFavArtists={ setFavArtists }
-              setFavTracks={ setFavTracks } 
               setFavAlbums={ setFavAlbums }  />} />
-        <Route exact path="/about" render={props => <Favorites {...props} favArtist={ favArtists }
-            favTracks={ favTracks }
+        <Route exact path="/about" render={props => <Favorites {...props}       favArtist={ favArtists }
             favAlbums={ favAlbums }/>} />
         <Route exact path="/signup" render={props => <SignUp {...props} />} />
       </Switch>
