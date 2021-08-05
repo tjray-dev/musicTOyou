@@ -1,24 +1,57 @@
-
 {
   "users": [
     {
-      "userName": "string",
-      "userEmail": "string",
-      "password": "string",
+      "id": 1,
+      "userName": "Rick_Astly",
+      "userEmail": "NeverGunnaGiveYouUp@rickAstly.com",
+      "password": "n3v3rgunnaL3ty0uD0wn",
       "favoriteArtists": [
         "artist id",
         "artist id",
         "artist id"
-        
       ],
       "favoriteAlbums": [
         "album id",
         "album id",
         "album id"
-        
       ],
-      "favoriteTracks": [
-      ]
+      "favoriteTracks": []
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "userEmail": "test@test.com",
+      "password": "test",
+      "id": 4
+    },
+    {
+      "userEmail": "test2@test.com",
+      "password": "test2",
+      "id": 5
+    },
+    {
+      "userEmail": "test@test.com",
+      "password": "hello",
+      "id": 6
+    },
+    {
+      "userEmail": "tate@tate.com",
+      "password": "test",
+      "id": 7
+    },
+    {
+      "userEmail": "name@thing.com",
+      "password": "password",
+      "id": 8
+    },
+    {
+      "userEmail": "test@test.com",
+      "password": "test",
+      "id": 9
     }
   ]
 }

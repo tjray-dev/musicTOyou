@@ -7,7 +7,7 @@ import { useFormFields } from "../libs/hooksLib";
 import Login from "./Login";
 import "./SignUp.css"
 
-export default function Signup() {
+export default function Signup({ users }) {
   const [fields, handleFieldChange] = useFormFields({
     email: "",
     password: "",
@@ -26,9 +26,13 @@ export default function Signup() {
       fields.password === fields.confirmPassword
     );
   }
-
-
+console.log(users)
 function handleSubmit(event) {
+  const user = {
+    userEmail: fields.email,
+    password: fields.password
+  }
+  console.log(user)
     event.preventDefault();
 
     setIsLoading(true);
@@ -36,8 +40,14 @@ function handleSubmit(event) {
     setNewUser("test");
 
     setIsLoading(false);
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json' 
+      },
+      body: JSON.stringify(user)
+    })
   }
-
 
 
   function renderForm() {
@@ -84,7 +94,7 @@ function handleSubmit(event) {
 
   return (
     <div className="Signup">
-      {newUser === null ? renderForm() : <Login /> }
+      {newUser === null ? renderForm() : <Login users={users} /> }
     </div>
   );
 }

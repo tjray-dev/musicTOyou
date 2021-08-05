@@ -1,5 +1,5 @@
 // This is where any react Hooks can be imported
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 // These are the Base components
 // import Search from './Search'
@@ -15,6 +15,8 @@ import MainContainer from './MainContainer'
 import '../App.css';
 
 function App() {
+  
+  const [ users, setUsers ] = useState([])
   const [ searchResults, setSearchResults ] = useState([])
   const [ currentPage,   setCurrentPage ]   = useState(1)
   const [ itemsPerPage,  setItemsPerPage ]  = useState(4)
@@ -23,8 +25,13 @@ function App() {
   const [ favArtists, setFavArtists ]  = useState([])
   const [ favTracks,  setFavTracks  ]  = useState([])
   const [ favAlbums,  setFavAlbums ]  = useState([])
-  // 
 
+  useEffect(() => {
+    fetch('http://localhost:5000/users')
+      .then(r => r.json())
+        .then(setUsers)
+  }, [])
+  console.log(users)
   return (
     <div className="App">
       {/* <AppContext.Provider> */}
@@ -61,7 +68,7 @@ function App() {
           /> */}
         </Route>
         <Route exact path='/'>
-          <SignUp />
+          <SignUp users={users} />
         </Route>
       </Switch>
       {/* <SignUp /> */}

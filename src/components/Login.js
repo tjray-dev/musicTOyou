@@ -7,9 +7,9 @@ import { useFormFields } from "../libs/hooksLib";
 // import {useAppContext} from '../libs/contextLib'
 import "./Login.css";
 
-export default function Login() {
+export default function Login({users}) {
   const history = useHistory();
-
+  // console.log(users)
   // const {userHasAuthenticated} = useAppContext();
 
   // const [email, setEmail] = useState("");
@@ -23,15 +23,22 @@ export default function Login() {
     return fields.email.length > 0 && fields.password.length > 0;
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event, users) {
     event.preventDefault();
-    // userHasAuthenticated(true);
-    history.push('/')
+    console.log(users)
+    const found = users.find( user => user.userEmail === fields.email)
+    console.log(found)
+    if (found){
+      return history.push('/main_container')
+    }else{
+      alert("Please Sign Up")
+    }
+    console.log("Logged In! Yay!")
   }
 
   return (
     <div className="Login">
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={event => handleSubmit(event, users )}>
         <Form.Group size="lg" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
