@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import Login from "./Login";
 import "./SignUp.css"
@@ -16,7 +15,6 @@ export default function Signup({ users }) {
   });
   const history = useHistory();
   const [newUser, setNewUser] = useState(null);
-  // const { userHasAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
 
   function validateForm() {
@@ -94,7 +92,7 @@ function handleSubmit(event) {
 
   return (
     <div className="Signup">
-      {newUser === null ? renderForm() : <Login users={users} /> }
+      {renderForm() }
     </div>
   );
 }

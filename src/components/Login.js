@@ -4,16 +4,12 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import { useFormFields } from "../libs/hooksLib";
-// import {useAppContext} from '../libs/contextLib'
+import {Typography, AppBar, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
 import "./Login.css";
 
 export default function Login({users}) {
   const history = useHistory();
-  // console.log(users)
-  // const {userHasAuthenticated} = useAppContext();
-
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+  
   const [fields, handleFieldChange] = useFormFields({
     email: '',
     password: ''
@@ -31,12 +27,30 @@ export default function Login({users}) {
     if (found){
       return history.push('/main_container')
     }else{
-      alert("Please Sign Up")
+      return history.push('/signup')
     }
-    console.log("Logged In! Yay!")
   }
 
   return (
+    <>
+      <Grid
+    container
+    direction="row"
+    justifyContent="center"
+    alignItems="center"
+  >
+          <div style={{display: 'inline-block'}}>
+            <Container maxWidth="sm">
+              <Typography variant='h2' align='center' color="textPrimary" gutterBottom>
+                  Welcome to Music-To-YOU
+              </Typography>
+              <Typography variant='h5' align='center' color="textSecondary" caption>
+                Hello music fans and welcome to MTU! Your one stop shop for everything music related
+              </Typography>
+              </Container>
+          </div>
+          
+        
     <div className="Login">
       <Form onSubmit={event => handleSubmit(event, users )}>
         <Form.Group size="lg" controlId="email">
@@ -61,5 +75,7 @@ export default function Login({users}) {
         </Button>
       </Form>
     </div>
+    </Grid>
+    </>
   );
 }
