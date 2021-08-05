@@ -5,7 +5,6 @@ function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtis
   function mapHelper(result){
     switch (result.type) {
       case 'master':
-        // if type === master then the searchResults is a list of 'Albums'
         return <Card 
           key={`${result.id}_${result.type}`} 
           title={result.title}
@@ -46,6 +45,7 @@ function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtis
       { renderCards() }
       <button onClick={ previousPage }>Previous Page</button>
       <button onClick={ nextPage }>Next Page</button>
+      <Favorites />
     </>
   )
 }

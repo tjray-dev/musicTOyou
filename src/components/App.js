@@ -23,7 +23,6 @@ function App() {
   // State for the favorites page
   // These will need to be passed down to the card 
   const [ favArtists, setFavArtists ]  = useState([])
-  const [ favTracks,  setFavTracks  ]  = useState([])
   const [ favAlbums,  setFavAlbums ]  = useState([])
 
   useEffect(() => {
@@ -45,14 +44,12 @@ function App() {
             onSearch={ setSearchResults }
             setCurrentPage={ setCurrentPage } 
             setFavArtists={ setFavArtists }
-            setFavTracks={ setFavTracks } 
             setFavAlbums={ setFavAlbums }  
           />
         </Route>
         <Route path='/favorites'>
           <Favorites
           favArtist={ favArtists }
-          favTracks={ favTracks }
           favAlbums={ favAlbums }
           />
         </Route>
