@@ -30,13 +30,6 @@ function SearchBar( { onSearch, currentPage, itemsPerPage } ){
         name='searchType' 
         onClick={ e => setSearchType(e.target.value) } 
       />Album 
-
-      <input 
-        type='radio' 
-        value='track' 
-        name='searchType' 
-        onClick={ e => setSearchType(e.target.value) } 
-      />Track 
       
       <input 
         type='radio'
