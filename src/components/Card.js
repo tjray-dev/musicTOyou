@@ -1,11 +1,11 @@
 import { useState, } from 'react'
 
-// !TO DO!
-  // ** Start with one artist and work outward from there **
-  // build logic to display different cards using result.type
-    // dig through data and figure out general shape of each type
-
 function Card({ title, thumb, type, resource }){
+  // state of favs
+  // onclick favs change from true to false
+  // logic in favs to force render there
+  // have a state that is the card
+  // 
   const [ showDetails, setShowDetails ] = useState(false)
   const [ detail, setDetail ] = useState({
     title: '',
@@ -45,11 +45,17 @@ function Card({ title, thumb, type, resource }){
       .then(data => setDetail(data))
         .then(setShowDetails(!showDetails))
   }
+  function handleAddToFavorite(e){
+    console.log(e)
+    alert("Added To Favorites")
+  }
 
   return (
     <div>
       <h6>{ title }</h6>
       <img src={ thumb } alt="This is a card" onClick={ handleDetails } />
+      <br/>
+      <button onClick={(e) => handleAddToFavorite(e) }>Favorite</button>
       {showDetails ? renderDetail() : null }
     </div>
   )

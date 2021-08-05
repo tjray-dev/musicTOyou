@@ -28,7 +28,6 @@ function App() {
   const [ currentPage,   setCurrentPage ]   = useState(1)
   const [ itemsPerPage,  setItemsPerPage ]  = useState(4)
   const [ favArtists, setFavArtists ]  = useState([])
-  const [ favTracks,  setFavTracks  ]  = useState([])
   const [ favAlbums,  setFavAlbums ]  = useState([])
  
   useEffect(() => {
