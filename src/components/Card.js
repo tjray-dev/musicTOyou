@@ -1,11 +1,8 @@
 import { useState, } from 'react'
 
 function Card({ title, thumb, type, resource }){
-  // state of favs
-  // onclick favs change from true to false
-  // logic in favs to force render there
-  // have a state that is the card
-  // 
+
+  // title 
   const [ showDetails, setShowDetails ] = useState(false)
   const [ detail, setDetail ] = useState({
     title: '',
@@ -29,7 +26,7 @@ function Card({ title, thumb, type, resource }){
         return (
           <div>
             <li>{detail.name}</li>
-            <li><strong>Members:</strong>{detail.members.map(member => <li key={member.name}>{member.name}</li>)}</li>
+            { detail.members ? <li><strong>Members:</strong>{detail.members.map(member => <li key={member.name}>{member.name}</li>)}</li> : null }
           </div>
         )
       default:
