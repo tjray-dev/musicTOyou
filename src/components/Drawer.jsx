@@ -21,8 +21,22 @@ const useStyles = makeStyles({
   }
 });
 
+// function handleLogOut(){
+//   fetch(`http://localhost:5000/users/${id}`, {
+//     method: 'PATCH',
+//     body: JSON.stringify({
+//       "favoriteArtists": artists,
+//       "favoriteAlbums": albums 
+//       }),
+//     headers: {
+//       'Content-Type' : 'application/json; charset=UTF-8' 
+//     },
+    
+//   }).then(res => res.json()).then(data => console.log(data))
+// }
+
 const Drawer = props => {
-  const { history } = props;
+  const { history, user, artists, albums } = props;
   const classes = useStyles();
   const itemsList = [
     {
@@ -48,9 +62,24 @@ const Drawer = props => {
     {
       text: "LogOut",
       icon: <ExitToAppIcon />,
-      onClick: () => history.push("/signup")
+      onClick: () =>  handleLogOut()
     }
   ];
+  
+  function handleLogOut(){
+    fetch(`http://localhost:5000/users/${user.id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        "favoriteArtists": artists,
+        "favoriteAlbums": albums 
+        }),
+      headers: {
+        'Content-Type' : 'application/json; charset=UTF-8' 
+      },
+      
+    }).then(res => res.json()).then(data => console.log(data)).then(history.push("/signup"))
+  }
+
   return (
     <MUIDrawer variant="permanent" className={classes.drawer}>
       <List>

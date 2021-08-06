@@ -26,7 +26,36 @@
     {
       "userEmail": "test@test.com",
       "password": "test",
-      "id": 4
+      "id": 4,
+      "favoriteArtists": [
+        {
+          "title": "Lennon-McCartney",
+          "thumb": "https://img.discogs.com/ceyRUPICBG-l7G_OvShHa9nly4A=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-779927-1608749193-1629.jpeg.jpg",
+          "resource": "https://api.discogs.com/artists/779927"
+        },
+        {
+          "title": "Jagger-Richards",
+          "thumb": "https://img.discogs.com/zYVZi2z1A0jYkKCNOAsSvsmYTZQ=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-845581-1462296075-5163.jpeg.jpg",
+          "resource": "https://api.discogs.com/artists/845581"
+        }
+      ],
+      "favoriteAlbums": [
+        {
+          "title": "The The - The The Versus The World",
+          "thumb": "https://img.discogs.com/fNGGOoIZ7BpbNrpOu2awd_nIpy4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-415774-1110642675.gif.jpg",
+          "resource": "https://api.discogs.com/masters/20960"
+        },
+        {
+          "title": "The The - 45 RPM (The Singles Of The The)",
+          "thumb": "https://img.discogs.com/Lv-oZU7_YSEsfY63CWuma5OMfas=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-668909-1618043362-6031.jpeg.jpg",
+          "resource": "https://api.discogs.com/masters/20990"
+        },
+        {
+          "title": "The The - Radio Cinéola Trilogy",
+          "thumb": "https://img.discogs.com/COyghfLdknGyCTwq6aQ-KJqG5pI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11048383-1509053663-7027.jpeg.jpg",
+          "resource": "https://api.discogs.com/masters/1265559"
+        }
+      ]
     },
     {
       "userEmail": "test2@test.com",

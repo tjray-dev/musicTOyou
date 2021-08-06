@@ -55,7 +55,7 @@ function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbu
         setFavAlbum(newFavs)
         break;
       case 'artist':
-        newFavs = [...favAlbum, favorite]
+        newFavs = [...favArtist, favorite]
         setFavArtist(newFavs)
         break;
     }
@@ -72,7 +72,7 @@ function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbu
               <img src={ thumb } alt="This is a card" onClick={ handleDetails } />
               </ImageListItem>
             </ImageList>
-          <Button onClick={(e) => handleAddToFavorite(e) } variant='contained' color='primary'>Favorite</Button>
+            <Button onClick={(e) => handleAddToFavorite(e) } variant='contained' color='primary'>Favorite</Button>
           {showDetails ? renderDetail() : null }
         </Container>
       </div>

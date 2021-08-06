@@ -29,11 +29,16 @@ function App() {
   const [ favArtists, setFavArtists ]  = useState([])
   const [ favAlbums,  setFavAlbums ]  = useState([])
   console.log(user)
+  function setDefaults(){
+    setUser({})
+    setFavArtists([])
+    setFavAlbums([])
+  }
   useEffect(() => {
     fetch('http://localhost:5000/users')
       .then(r => r.json())
-        .then(setUsers)
-  }, [])
+        .then(setUsers).then()
+  }, [user])
 
   
   
@@ -52,7 +57,7 @@ function App() {
       </AppBar>
       </div>
       <div className={classes.container}>
-      <Drawer />
+      <Drawer user={user} artists={favArtists} albums={favAlbums}/>
       <Switch>
         <Route exact from="/" render={props => <Login {...props} users={users} setUser={setUser} />} />
         <Route exact path="/main_container" render={props => <MainContainer {...props}  searchResults={ searchResults }
@@ -68,7 +73,7 @@ function App() {
         <Route exact path="/favorites" render={props => <Favorites {...props}  favArtist={ favArtists }
             favAlbums={ favAlbums }/>} />
         <Route exact path="/signup" render={props => <SignUp {...props} />} />
-        <Route exact path="/signup" render={props => <LogOut {...props} />} />
+        <Route exact path="/signup" render={props => <LogOut {...props} user={user} artists={favArtists} albums={favAlbums} setUser={setUser}/>} />
       </Switch>
     </div>
   
