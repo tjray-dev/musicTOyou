@@ -40,7 +40,7 @@ function SearchBar( { onSearch, currentPage, itemsPerPage } ){
       {/* This is the text field for the search functionality */}
       <input 
         type='text' 
-        placeholder='This is a search bar...' 
+        placeholder='Never gunna say goodbye...' 
         value={ searchTerm }
         onChange={ (e) => setSearchTerm(e.target.value) }
       />

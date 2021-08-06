@@ -59,6 +59,7 @@ export default function Login({users, setUser }) {
             <Form.Control
               autoFocus
               type="email"
+              placeholder="Rick Astly"
               value={fields.email}
               onChange={handleFieldChange}
             />
@@ -67,6 +68,7 @@ export default function Login({users, setUser }) {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
+              placeholder='Never Gonna Give...'
               value={fields.password}
               onChange={handleFieldChange}
             />

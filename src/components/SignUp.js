@@ -46,6 +46,7 @@ function handleSubmit(event) {
       },
       body: JSON.stringify(user)
     })
+    history.push('/main_container')
   }
 
 
@@ -58,6 +59,7 @@ function handleSubmit(event) {
           <Form.Control
             autoFocus
             type="email"
+            placeholder='NeverGunnaGiveYouUp@rickAstly.com'
             value={fields.email}
             onChange={handleFieldChange}
           />
@@ -66,6 +68,7 @@ function handleSubmit(event) {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
+            placeholder='Never Gonna Let You Down'
             value={fields.password}
             onChange={handleFieldChange}
           />
@@ -74,6 +77,7 @@ function handleSubmit(event) {
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
             type="password"
+            placeholder='Turn Around And Desert You...'
             onChange={handleFieldChange}
             value={fields.confirmPassword}
           />
