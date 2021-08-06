@@ -9,7 +9,6 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import HomeIcon from "@material-ui/icons/Home";
 import DomainIcon from '@material-ui/icons/Domain';
-import SearchIcon from '@material-ui/icons/Search';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import QueueMusicIcon from '@material-ui/icons/QueueMusic';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -21,19 +20,6 @@ const useStyles = makeStyles({
   }
 });
 
-// function handleLogOut(){
-//   fetch(`http://localhost:5000/users/${id}`, {
-//     method: 'PATCH',
-//     body: JSON.stringify({
-//       "favoriteArtists": artists,
-//       "favoriteAlbums": albums 
-//       }),
-//     headers: {
-//       'Content-Type' : 'application/json; charset=UTF-8' 
-//     },
-    
-//   }).then(res => res.json()).then(data => console.log(data))
-// }
 
 const Drawer = props => {
   const { history, user, artists, albums } = props;

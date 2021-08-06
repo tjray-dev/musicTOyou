@@ -7,7 +7,7 @@ import MainContainer from './MainContainer'
 import Drawer from "./Drawer";
 import Login from './Login'
 import '../App.css';
-import {Typography,AppBar, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
+import {Typography,AppBar, CssBaseline, Toolbar} from '@material-ui/core';
 import {QueueMusic, HomeIcon} from '@material-ui/icons'
 import {makeStyles} from '@material-ui/core/styles'
 
@@ -28,12 +28,7 @@ function App() {
   const [ itemsPerPage,  setItemsPerPage ]  = useState(4)
   const [ favArtists, setFavArtists ]  = useState([])
   const [ favAlbums,  setFavAlbums ]  = useState([])
-  console.log(user)
-  function setDefaults(){
-    setUser({})
-    setFavArtists([])
-    setFavAlbums([])
-  }
+  
   useEffect(() => {
     fetch('http://localhost:5000/users')
       .then(r => r.json())

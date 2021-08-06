@@ -1,10 +1,8 @@
-// will have a button that when clicked will render the Login form
-import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import { useFormFields } from "../libs/hooksLib";
-import {Typography, AppBar, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
+import {Typography, Grid, Container} from '@material-ui/core';
 import "./Login.css";
 
 export default function Login({users, setUser }) {

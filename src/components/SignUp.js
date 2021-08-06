@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { useFormFields } from "../libs/hooksLib";
-import {Typography,AppBar, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
+import {Container} from '@material-ui/core';
 
 import "./SignUp.css"
 
@@ -46,7 +46,7 @@ function handleSubmit(event) {
       },
       body: JSON.stringify(user)
     })
-    history.push('/main_container')
+    history.push('/')
   }
 
 

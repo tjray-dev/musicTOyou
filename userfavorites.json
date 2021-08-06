@@ -81,6 +81,45 @@
       "userEmail": "test@test.com",
       "password": "test",
       "id": 9
+    },
+    {
+      "userEmail": "Mr.Obiume@gmail.com",
+      "password": "abcd",
+      "id": 10
+    },
+    {
+      "userEmail": "music@music.com",
+      "password": "music",
+      "id": 11
+    },
+    {
+      "userEmail": "music2@music.com",
+      "password": "music",
+      "id": 12,
+      "favoriteArtists": [
+        {
+          "title": "Lennon-McCartney",
+          "thumb": "https://img.discogs.com/ceyRUPICBG-l7G_OvShHa9nly4A=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-779927-1608749193-1629.jpeg.jpg",
+          "resource": "https://api.discogs.com/artists/779927"
+        },
+        {
+          "title": "Jagger-Richards",
+          "thumb": "https://img.discogs.com/zYVZi2z1A0jYkKCNOAsSvsmYTZQ=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-845581-1462296075-5163.jpeg.jpg",
+          "resource": "https://api.discogs.com/artists/845581"
+        }
+      ],
+      "favoriteAlbums": [
+        {
+          "title": "Nirvana - Fire Extinguisher",
+          "thumb": "https://img.discogs.com/b4lYG7QY8mhFO7cltqa_cwo4FyM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3219176-1492260664-5562.jpeg.jpg",
+          "resource": "https://api.discogs.com/masters/462493"
+        },
+        {
+          "title": "Nirvana - Heart-Shaped Box",
+          "thumb": "https://img.discogs.com/Fc1dXG99Yu0eBHeVaYyoNbduYIo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2644318-1294692044.jpeg.jpg",
+          "resource": "https://api.discogs.com/masters/391907"
+        }
+      ]
     }
   ]
 }

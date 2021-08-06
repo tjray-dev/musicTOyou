@@ -1,5 +1,5 @@
 import { useState, } from 'react'
-import {Typography,AppBar, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText, Button, ImageListItem, ImageList} from '@material-ui/core';
+import {Typography,Container, Button, ImageListItem, ImageList} from '@material-ui/core';
 
 function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbum, favArtist }){
 

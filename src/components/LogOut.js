@@ -1,4 +1,3 @@
-// This will be a default page for non-users/onLoad
 import Button from "react-bootstrap/Button";
 import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
@@ -19,9 +18,7 @@ function LogOut({user, artists, albums, }){
     },
     
   }).then(res => res.json()).then(data => console.log(data))
-  // .then(history.push('/SignUp'))
-  // localStorage.clear();
-   
+
  }
 
   

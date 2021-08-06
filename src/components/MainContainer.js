@@ -1,9 +1,11 @@
 import Card from './Card'
 import SearchBar from './SearchBar'
 import Favorites from './Favorites'
+import {Button, ButtonGroup} from '@material-ui/core';
 
-import {Typography,AppBar, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText, Button, ButtonGroup} from '@material-ui/core';
-function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtists, setFavTracks, setFavAlbums, onSearch, itemsPerPage, favAlbums, favArtists, user }){
+
+function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtists, setFavAlbums, onSearch, itemsPerPage, favAlbums, favArtists, user }){
+
   function mapHelper(result){
     switch (result.type) {
       case 'master':
@@ -52,15 +54,13 @@ function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtis
       />
       { renderCards() }
       <ButtonGroup color='primary' variant='contained' orientation='vertical'>
-        <Button onClick={ previousPage }>Back</Button><br></br> <br></br><br></br><br></br><br></br>
+        <Button onClick={ previousPage }>Back</Button>
+        <br></br> <br></br><br></br><br></br><br></br>
         <br></br> <br></br><br></br><br></br><br></br>
         <Button onClick={ nextPage }>Next</Button>
       </ButtonGroup>
       <br></br>
-      <Favorites favAlbums={ favAlbums } favArtists={ favArtists } />
-      
-    
-      
+      <Favorites favAlbums={ favAlbums } favArtists={ favArtists } />   
     </>
   )
 }

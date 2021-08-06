@@ -4,7 +4,6 @@ function SearchBar( { onSearch, currentPage, itemsPerPage } ){
   const [ searchTerm, setSearchTerm ] = useState("")
   
   useEffect(() => {
-    // declaring the const variables needed for every fetch regardless of type 
     const baseURL    = 'https://api.discogs.com/database/search?'
     const authKey    = 'key=DRbPFOFZKsmVvvnOrLoC'
     const authSecret = 'secret=pdjKcOwjNpdnhiVcmuChnntCMjVmbvwH'
@@ -13,10 +12,9 @@ function SearchBar( { onSearch, currentPage, itemsPerPage } ){
       .then( r => r.json() )
         .then( data => onSearch(data.results) )
   }, [searchTerm, currentPage, searchType, itemsPerPage, onSearch])
+
   return(
-    // The search form 
     <form>
-      {/* These are the radio buttons that set the type of search being done */}
       <input 
         type='radio' 
         value='artist' 
@@ -37,7 +35,7 @@ function SearchBar( { onSearch, currentPage, itemsPerPage } ){
         name='searchType'
         onClick={ e => setSearchType(e.target.value) } 
       />Genre 
-      {/* This is the text field for the search functionality */}
+      
       <input 
         type='text' 
         placeholder='Never gunna say goodbye...' 
