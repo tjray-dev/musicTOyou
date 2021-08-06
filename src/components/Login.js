@@ -33,50 +33,50 @@ export default function Login({users, setUser }) {
   }
 
   return (
-    <>
-      <Grid
-    container
-    direction="row"
-    justifyContent="center"
-    alignItems="center"
-  >
-          <div style={{display: 'inline-block'}}>
-            <Container maxWidth="sm">
-              <Typography variant='h2' align='center' color="textPrimary" gutterBottom>
-                  Welcome to Music-To-YOU
-              </Typography>
-              <Typography variant='h5' align='center' color="textSecondary" caption>
-                Hello music fans and welcome to MTU! Your one stop shop for everything music related
-              </Typography>
-              </Container>
-          </div>
+      <>
+        <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+            <div style={{display: 'inline-block'}}>
+              <Container maxWidth="sm">
+                <Typography variant='h2' align='center' color="textPrimary" gutterBottom>
+                    Welcome to Music-To-YOU
+                </Typography>
+                <Typography variant='h5' align='center' color="textSecondary" caption>
+                  Hello music fans and welcome to MTU! Your one stop shop for everything music related
+                </Typography>
+                </Container>
+            </div>
+            
           
-        
-    <div className="Login">
-      <Form onSubmit={event => handleSubmit(event, users )}>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            value={fields.email}
-            onChange={handleFieldChange}
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={fields.password}
-            onChange={handleFieldChange}
-          />
-        </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
-        </Button>
-      </Form>
-    </div>
-    </Grid>
-    </>
+      <div className="Login">
+        <Form onSubmit={event => handleSubmit(event, users )}>
+          <Form.Group size="lg" controlId="email">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              autoFocus
+              type="email"
+              value={fields.email}
+              onChange={handleFieldChange}
+            />
+          </Form.Group>
+          <Form.Group size="lg" controlId="password">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              value={fields.password}
+              onChange={handleFieldChange}
+            />
+          </Form.Group>
+          <Button block size="lg" type="submit" disabled={!validateForm()}>
+            Login
+          </Button>
+        </Form>
+      </div>
+      </Grid>
+      </>
   );
 }

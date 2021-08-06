@@ -12,6 +12,7 @@ import DomainIcon from '@material-ui/icons/Domain';
 import SearchIcon from '@material-ui/icons/Search';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import QueueMusicIcon from '@material-ui/icons/QueueMusic';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { withRouter } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -44,6 +45,11 @@ const Drawer = props => {
       icon: <QueueMusicIcon />,
       onClick: () => history.push("/signup")
   },
+    {
+      text: "LogOut",
+      icon: <ExitToAppIcon />,
+      onClick: () => history.push("/signup")
+    }
   ];
   return (
     <MUIDrawer variant="permanent" className={classes.drawer}>
