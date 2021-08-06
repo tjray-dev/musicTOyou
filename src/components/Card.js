@@ -1,4 +1,5 @@
 import { useState, } from 'react'
+import {Typography,AppBar, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText, Button, ImageListItem, ImageList} from '@material-ui/core';
 
 function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbum, favArtist }){
 
@@ -62,13 +63,20 @@ function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbu
   }
 
   return (
-    <div>
-      <h6>{ title }</h6>
-      <img src={ thumb } alt="This is a card" onClick={ handleDetails } />
-      <br/>
-      <button onClick={ handleAddToFavorite }>Favorite</button>
-      {showDetails ? renderDetail() : null }
-    </div>
+    
+      <div>
+        <Container maxWidth='sm'>
+          <Typography variant='h6'>{ title }</Typography>
+          <ImageList rowHeight={200}>
+            <ImageListItem>
+              <img src={ thumb } alt="This is a card" onClick={ handleDetails } />
+              </ImageListItem>
+            </ImageList>
+          <Button onClick={(e) => handleAddToFavorite(e) } variant='contained' color='primary'>Favorite</Button>
+          {showDetails ? renderDetail() : null }
+        </Container>
+      </div>
+    
   )
 }
 export default Card
