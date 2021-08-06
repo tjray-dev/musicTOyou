@@ -1,9 +1,9 @@
 import { useState, } from 'react'
 import {Typography,AppBar, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText, Button, ImageListItem, ImageList} from '@material-ui/core';
 
-function Card({ title, thumb, type, resource }){
+function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbum, favArtist }){
 
-  // title 
+  
   const [ showDetails, setShowDetails ] = useState(false)
   const [ detail, setDetail ] = useState({
     title: '',
@@ -14,6 +14,7 @@ function Card({ title, thumb, type, resource }){
   function renderDetail(){
     switch (type){
       case 'master':
+        console.log(detail)
         return (
           <div>
             <li>{detail.title}</li>
@@ -23,7 +24,6 @@ function Card({ title, thumb, type, resource }){
           </div>
         )
       case 'artist':
-        console.log(detail)
         return (
           <div>
             <li>{detail.name}</li>
@@ -43,8 +43,23 @@ function Card({ title, thumb, type, resource }){
       .then(data => setDetail(data))
         .then(setShowDetails(!showDetails))
   }
-  function handleAddToFavorite(e){
-    console.log(e)
+  function handleAddToFavorite(){
+    let favorite = {
+      title: title,
+      thumb: thumb,
+      resource: resource
+    }
+    let newFavs = []
+    switch (type){
+      case 'master':
+        newFavs = [...favAlbum, favorite]
+        setFavAlbum(newFavs)
+        break;
+      case 'artist':
+        newFavs = [...favAlbum, favorite]
+        setFavArtist(newFavs)
+        break;
+    }
     alert("Added To Favorites")
   }
 

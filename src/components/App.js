@@ -21,13 +21,14 @@ const useStyles = makeStyles({
 function App() {
  const classes = useStyles();
 
+  const [ user, setUser ] = useState({})
   const [ users, setUsers ] = useState([])
   const [ searchResults, setSearchResults ] = useState([])
   const [ currentPage,   setCurrentPage ]   = useState(1)
   const [ itemsPerPage,  setItemsPerPage ]  = useState(4)
   const [ favArtists, setFavArtists ]  = useState([])
   const [ favAlbums,  setFavAlbums ]  = useState([])
- 
+  console.log(favAlbums)
   useEffect(() => {
     fetch('http://localhost:5000/users')
       .then(r => r.json())
@@ -53,10 +54,13 @@ function App() {
       <div className={classes.container}>
       <Drawer />
       <Switch>
-        <Route exact from="/" render={props => <Login {...props} />} />
+        <Route exact from="/" render={props => <Login {...props} setUser={setUser} />} />
         <Route exact path="/main_container" render={props => <MainContainer {...props}  searchResults={ searchResults }
               currentPage={ currentPage }
               itemsPerPage={ itemsPerPage }
+              favAlbums={ favAlbums}
+              favArtists={ favArtists }
+              user={user}
               onSearch={ setSearchResults }
               setCurrentPage={ setCurrentPage } 
               setFavArtists={ setFavArtists }
