@@ -14,6 +14,7 @@ function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbu
   function renderDetail(){
     switch (type){
       case 'master':
+        console.log(detail)
         return (
           <div>
             <li>{detail.title}</li>
@@ -39,7 +40,7 @@ function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbu
   }
   function handleDetails(){
     fetch(resource).then(r => r.json())
-      .then(data => console.log(data))
+      .then(data => setDetail(data))
         .then(setShowDetails(!showDetails))
   }
   function handleAddToFavorite(){

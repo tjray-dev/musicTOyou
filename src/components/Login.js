@@ -25,6 +25,7 @@ export default function Login({users}) {
     const found = users.find( user => user.userEmail === fields.email)
     console.log(found)
     if (found){
+      // set user state
       return history.push('/main_container')
     }else{
       return history.push('/signup')
