@@ -1,7 +1,7 @@
 import Card from './Card'
 import SearchBar from './SearchBar'
 import Favorites from './Favorites'
-function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtists, setFavTracks, setFavAlbums, onSearch, itemsPerPage }){
+function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtists, setFavAlbums, onSearch, itemsPerPage, favArtists, favAlbums }){
 
   function mapHelper(result){
     switch (result.type) {
@@ -11,14 +11,18 @@ function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtis
           title={result.title}
           thumb={result.thumb}
           type={result.type}
-          resource={result.resource_url} />
+          resource={result.resource_url}
+          setFavAlbum={ setFavAlbums }
+          favAlbum={ favAlbums } />
       case 'artist':
         return <Card 
           key={`${result.id}_${result.type}`}
           title={result.title} 
           thumb={result.thumb}
           type={result.type} 
-          resource={result.resource_url} />
+          resource={result.resource_url} 
+          setFavArtist={ setFavArtists } 
+          favArtist={ favArtists }/>
     } 
   }
   function renderCards(){
@@ -46,7 +50,7 @@ function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtis
       { renderCards() }
       <button onClick={ previousPage }>Previous Page</button>
       <button onClick={ nextPage }>Next Page</button>
-      <Favorites />
+      <Favorites favAlbums={ favAlbums } favArtists={ favArtists } />
     </>
   )
 }

@@ -1,15 +1,10 @@
-
-// !TO DO! 
-  // build out favorites page and any child components needed
-    // will need multiple states for the different kinds of lists
-    // i.e. favorite artists, favorite tracks, favorite albums
-function Favorites( favArtist, favAlbum){
-
+import Card from './Card'
+function Favorites( favArtists, favAlbums){
+  console.log(favAlbums)
   return(
-    <>
       <div>
+        {favAlbums ? favAlbums.map(album => <Card title={album.title}  />) : null }
       </div>
-    </>
   )
 
 }

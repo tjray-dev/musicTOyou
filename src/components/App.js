@@ -29,7 +29,7 @@ function App() {
   const [ itemsPerPage,  setItemsPerPage ]  = useState(4)
   const [ favArtists, setFavArtists ]  = useState([])
   const [ favAlbums,  setFavAlbums ]  = useState([])
- 
+  console.log(favAlbums)
   useEffect(() => {
     fetch('http://localhost:5000/users')
       .then(r => r.json())
@@ -59,11 +59,13 @@ function App() {
         <Route exact path="/main_container" render={props => <MainContainer {...props}  searchResults={ searchResults }
               currentPage={ currentPage }
               itemsPerPage={ itemsPerPage }
+              favAlbums={ favAlbums}
+              favArtists={ favArtists }
               onSearch={ setSearchResults }
               setCurrentPage={ setCurrentPage } 
               setFavArtists={ setFavArtists }
               setFavAlbums={ setFavAlbums }  />} />
-        <Route exact path="/about" render={props => <Favorites {...props}       favArtist={ favArtists }
+        <Route exact path="/about" render={props => <Favorites {...props}       favArtists={ favArtists }
             favAlbums={ favAlbums }/>} />
         <Route exact path="/signup" render={props => <SignUp {...props} />} />
       </Switch>

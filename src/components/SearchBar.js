@@ -12,7 +12,7 @@ function SearchBar( { onSearch, currentPage, itemsPerPage } ){
     fetch(`${baseURL}page=${currentPage}&per_page=${itemsPerPage}&${searchType}=${searchTerm}&${authKey}&${authSecret}`)
       .then( r => r.json() )
         .then( data => onSearch(data.results) )
-  }, [searchTerm, currentPage, searchType, itemsPerPage])
+  }, [searchTerm, currentPage, searchType, itemsPerPage, onSearch])
   return(
     // The search form 
     <form>

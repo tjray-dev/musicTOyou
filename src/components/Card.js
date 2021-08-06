@@ -1,8 +1,8 @@
 import { useState, } from 'react'
 
-function Card({ title, thumb, type, resource }){
+function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbum, favArtist }){
 
-  // title 
+  
   const [ showDetails, setShowDetails ] = useState(false)
   const [ detail, setDetail ] = useState({
     title: '',
@@ -22,7 +22,6 @@ function Card({ title, thumb, type, resource }){
           </div>
         )
       case 'artist':
-        console.log(detail)
         return (
           <div>
             <li>{detail.name}</li>
@@ -39,11 +38,26 @@ function Card({ title, thumb, type, resource }){
   }
   function handleDetails(){
     fetch(resource).then(r => r.json())
-      .then(data => setDetail(data))
+      .then(data => console.log(data))
         .then(setShowDetails(!showDetails))
   }
-  function handleAddToFavorite(e){
-    console.log(e)
+  function handleAddToFavorite(){
+    let favorite = {
+      title: title,
+      thumb: thumb,
+      resource: resource
+    }
+    let newFavs = []
+    switch (type){
+      case 'master':
+        newFavs = [...favAlbum, favorite]
+        setFavAlbum(newFavs)
+        break;
+      case 'artist':
+        newFavs = [...favAlbum, favorite]
+        setFavArtist(newFavs)
+        break;
+    }
     alert("Added To Favorites")
   }
 
@@ -52,7 +66,7 @@ function Card({ title, thumb, type, resource }){
       <h6>{ title }</h6>
       <img src={ thumb } alt="This is a card" onClick={ handleDetails } />
       <br/>
-      <button onClick={(e) => handleAddToFavorite(e) }>Favorite</button>
+      <button onClick={ handleAddToFavorite }>Favorite</button>
       {showDetails ? renderDetail() : null }
     </div>
   )
