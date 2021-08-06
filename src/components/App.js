@@ -65,7 +65,7 @@ function App() {
               setCurrentPage={ setCurrentPage } 
               setFavArtists={ setFavArtists }
               setFavAlbums={ setFavAlbums }  />} />
-        <Route exact path="/about" render={props => <Favorites {...props}  favArtist={ favArtists }
+        <Route exact path="/favorites" render={props => <Favorites {...props}  favArtist={ favArtists }
             favAlbums={ favAlbums }/>} />
         <Route exact path="/signup" render={props => <SignUp {...props} />} />
         <Route exact path="/signup" render={props => <LogOut {...props} />} />
