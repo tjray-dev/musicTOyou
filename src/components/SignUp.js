@@ -3,7 +3,8 @@ import Form from "react-bootstrap/Form";
 import { useHistory } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { useFormFields } from "../libs/hooksLib";
-import Login from "./Login";
+import {Typography,AppBar, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
+
 import "./SignUp.css"
 
 export default function Signup({ users }) {
@@ -50,6 +51,7 @@ function handleSubmit(event) {
 
   function renderForm() {
     return (
+      <Container>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="email" size="lg">
           <Form.Label>Email</Form.Label>
@@ -87,6 +89,7 @@ function handleSubmit(event) {
           Signup
         </Button>
       </Form>
+      </Container>
     );
   }
 

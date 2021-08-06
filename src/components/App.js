@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch} from 'react-router-dom'
 import Favorites from './Favorites'
 import LogOut from './LogOut'
-import NavBar from './NavBar'
 import SignUp from './SignUp'
-import SearchBar from './SearchBar'
 import MainContainer from './MainContainer'
 import Drawer from "./Drawer";
 import Login from './Login'
@@ -68,18 +66,6 @@ function App() {
         <Route exact path="/signup" render={props => <SignUp {...props} />} />
       </Switch>
     </div>
-        {/* <main>
-          <div>
-            <Container maxWidth="sm">
-              <Typography variant='h2' align='center' color="textPrimary" gutterBottom>
-                  Welcome to Music-To-YOU
-              </Typography>
-              <Typography variant='h5' align='center' color="textSecondary" caption>
-                Hello music fans and welcome to MTU! Your one stop shop for everything music related
-              </Typography>
-              </Container>
-          </div>
-        </main> */}
         <LogOut />
       
       </>
