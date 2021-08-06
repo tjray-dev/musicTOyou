@@ -4,7 +4,6 @@ import Favorites from './Favorites'
 
 import {Typography,AppBar, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText, Button, ButtonGroup} from '@material-ui/core';
 function MainContainer({ searchResults, setCurrentPage, currentPage, setFavArtists, setFavTracks, setFavAlbums, onSearch, itemsPerPage, favAlbums, favArtists, user }){
-  console.log(favAlbums)
   function mapHelper(result){
     switch (result.type) {
       case 'master':

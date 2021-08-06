@@ -28,7 +28,7 @@ function App() {
   const [ itemsPerPage,  setItemsPerPage ]  = useState(4)
   const [ favArtists, setFavArtists ]  = useState([])
   const [ favAlbums,  setFavAlbums ]  = useState([])
-  console.log(favAlbums)
+  console.log(user)
   useEffect(() => {
     fetch('http://localhost:5000/users')
       .then(r => r.json())
@@ -54,7 +54,7 @@ function App() {
       <div className={classes.container}>
       <Drawer />
       <Switch>
-        <Route exact from="/" render={props => <Login {...props} setUser={setUser} />} />
+        <Route exact from="/" render={props => <Login {...props} users={users} setUser={setUser} />} />
         <Route exact path="/main_container" render={props => <MainContainer {...props}  searchResults={ searchResults }
               currentPage={ currentPage }
               itemsPerPage={ itemsPerPage }

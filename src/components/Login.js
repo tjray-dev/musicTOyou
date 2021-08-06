@@ -7,9 +7,9 @@ import { useFormFields } from "../libs/hooksLib";
 import {Typography, AppBar, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
 import "./Login.css";
 
-export default function Login({users}) {
+export default function Login({users, setUser }) {
   const history = useHistory();
-  
+  console.log(users)
   const [fields, handleFieldChange] = useFormFields({
     email: '',
     password: ''
@@ -25,7 +25,7 @@ export default function Login({users}) {
     const found = users.find( user => user.userEmail === fields.email)
     console.log(found)
     if (found){
-      // set user state
+      setUser(found)
       return history.push('/main_container')
     }else{
       return history.push('/signup')

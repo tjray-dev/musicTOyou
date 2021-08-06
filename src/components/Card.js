@@ -14,7 +14,6 @@ function Card({ title, thumb, type, resource, setFavAlbum, setFavArtist, favAlbu
   function renderDetail(){
     switch (type){
       case 'master':
-        console.log(detail)
         return (
           <div>
             <li>{detail.title}</li>
